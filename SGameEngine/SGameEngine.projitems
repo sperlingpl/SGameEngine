@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>aae2839c-bb29-4b7e-b287-6016cd2c3960</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>SGameEngine</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Engine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\GameObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\BaseScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\IScreen.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Screen\ScreenManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sound\ISoundPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sound\SoundPlayer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Input\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
+  </ItemGroup>
+</Project>
