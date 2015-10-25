@@ -16,6 +16,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Screen\ScreenManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sound\ISoundPlayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sound\SoundPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Timers\Timer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Timers\TimerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Input\" />

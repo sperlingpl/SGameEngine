@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SGameEngine.Graphics
+﻿namespace SGameEngine.Graphics
 {
     public class GameObject
     {
-
     }
 }
