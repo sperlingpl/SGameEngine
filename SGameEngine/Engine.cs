@@ -6,17 +6,29 @@ using SGameEngine.Timers;
 
 namespace SGameEngine
 {
-    public sealed class Configuration : IScreen
+    public sealed class Engine : IScreen
     {
         private ScreenManager screenManager;
         private TimerManager timerManager;
+
+        /// <summary>
+        ///     If no implementation provided, the default one will be used.
+        /// </summary>
         public ISoundPlayer SoundPlayer { get; set; }
 
+        /// <summary>
+        ///     Draws everything on screen.
+        /// </summary>
+        /// <param name="spriteBatch"></param>
         public void Draw(SpriteBatch spriteBatch)
         {
             screenManager.Draw(spriteBatch);
         }
 
+        /// <summary>
+        ///     Updates everything.
+        /// </summary>
+        /// <param name="gameTime"></param>
         public void Update(GameTime gameTime)
         {
             timerManager.Update(gameTime);
@@ -30,15 +42,15 @@ namespace SGameEngine
         public void Init(Game game)
         {
             timerManager = new TimerManager();
-            game.Services.AddService(typeof(TimerManager),timerManager);
+            game.Services.AddService(typeof (TimerManager), timerManager);
 
             screenManager = new ScreenManager(game);
-            game.Services.AddService(typeof(ScreenManager), screenManager);
+            game.Services.AddService(typeof (ScreenManager), screenManager);
 
 
             if (SoundPlayer == null)
                 SoundPlayer = new SoundPlayer();
-            game.Services.AddService(typeof(ISoundPlayer), SoundPlayer);
+            game.Services.AddService(typeof (ISoundPlayer), SoundPlayer);
         }
     }
 }

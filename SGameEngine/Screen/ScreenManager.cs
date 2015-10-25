@@ -43,22 +43,31 @@ namespace SGameEngine.Screen
         /// <param name="gameTime"></param>
         public void Update(GameTime gameTime)
         {
-            visibleScreens.Last().Update(gameTime);
+            for (var i = 0; i < visibleScreens.Count; i++)
+            {
+                visibleScreens[i].Update(gameTime);
+            }
         }
 
         public void Load(Type screenType)
         {
-            if (!Screens.ContainsKey(screenType))
-                return;
-
-            if (Screens[screenType] != null)
-                return;
+            if (Screens.ContainsKey(screenType))
+            {
+                if (Screens[screenType] != null)
+                    return;
+            }
 
             var screen = (BaseScreen) Activator.CreateInstance(screenType, game);
+
+            Screens[screenType] = screen;
 
             Task.Run(() => { screen.Load(); });
         }
 
+        /// <summary>
+        ///     Invokes Unload method on screen and removes it from visible screens stack (if it's on this stack).
+        /// </summary>
+        /// <param name="screenType"></param>
         public void Unload(Type screenType)
         {
             if (!Screens.ContainsKey(screenType))
@@ -85,7 +94,7 @@ namespace SGameEngine.Screen
             if (!Screens.ContainsKey(screenType))
                 return;
 
-            if (Screens[screenType] != null)
+            if (Screens[screenType] == null)
                 return;
 
             var screen = Screens[screenType];
@@ -95,7 +104,12 @@ namespace SGameEngine.Screen
                 visibleScreens.Remove(screen);
             }
 
+            var lastScreen = visibleScreens.LastOrDefault();
+            lastScreen?.Deactivated();
+
             visibleScreens.Add(screen);
+
+            screen.Activated();
         }
     }
 }
