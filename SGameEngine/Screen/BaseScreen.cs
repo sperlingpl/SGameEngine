@@ -14,6 +14,9 @@ namespace SGameEngine.Screen
             Content = new ContentManager(game.Content.ServiceProvider, game.Content.RootDirectory);
         }
 
+        /// <summary>
+        ///     Screen content.
+        /// </summary>
         protected ContentManager Content { get; set; }
 
         public virtual void Draw(SpriteBatch spriteBatch)
@@ -24,15 +27,28 @@ namespace SGameEngine.Screen
         {
         }
 
-        public virtual void Load() { }
-        public virtual void Unload() { }
+        public virtual void Load()
+        {
+        }
 
-        public virtual void Activated() { }
-        public virtual void Deactivated() { }
+        /// <summary>
+        ///     Unloads all content.
+        /// </summary>
+        public virtual void Unload()
+        {
+            Content.Unload();
+        }
+
+        public virtual void Activated()
+        {
+        }
+
+        public virtual void Deactivated()
+        {
+        }
 
         public virtual void GetInput()
         {
-            
         }
     }
 }

@@ -10,7 +10,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Engine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\Animation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\AnimationFrame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\AnimationLoader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\GameObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Log\DebugLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Log\ILogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Log\Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Log\LogType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\BaseScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\IScreen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Screen\ScreenManager.cs" />
