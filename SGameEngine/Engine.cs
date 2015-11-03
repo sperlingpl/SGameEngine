@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SGameEngine.Content;
+using SGameEngine.Input;
 using SGameEngine.Log;
 using SGameEngine.Screen;
 using SGameEngine.Sound;
@@ -36,6 +37,7 @@ namespace SGameEngine
         public void Update(GameTime gameTime)
         {
             timerManager.Update(gameTime);
+            KeyboardManager.Update();
             screenManager.Update(gameTime);
         }
 

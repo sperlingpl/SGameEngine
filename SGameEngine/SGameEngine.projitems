@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\AnimationLoader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\GameObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\Xml\AnimationConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Input\KeyboardManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\DebugLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\ILogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\Logger.cs" />
@@ -31,7 +32,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Timers\TimerManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Input\" />
     <Folder Include="$(MSBuildThisFileDirectory)Utils\" />
   </ItemGroup>
 </Project>
