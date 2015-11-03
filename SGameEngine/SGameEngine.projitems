@@ -9,11 +9,15 @@
     <Import_RootNamespace>SGameEngine</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ContentFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ContentManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Engine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\Animation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\AnimationConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\AnimationFrame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\AnimationLoader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Graphics\GameObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Graphics\Xml\AnimationConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\DebugLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\ILogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Log\Logger.cs" />

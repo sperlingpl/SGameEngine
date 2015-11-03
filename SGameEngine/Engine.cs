@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using SGameEngine.Content;
 using SGameEngine.Log;
 using SGameEngine.Screen;
 using SGameEngine.Sound;
@@ -24,7 +24,9 @@ namespace SGameEngine
         /// <param name="spriteBatch"></param>
         public void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Begin();
             screenManager.Draw(spriteBatch);
+            spriteBatch.End();
         }
 
         /// <summary>
@@ -45,6 +47,8 @@ namespace SGameEngine
         {
             Logger.Write(LogType.Info, "Initializing engine.");
 
+            ContentManager.Instance.Init(game);
+
             timerManager = new TimerManager();
             game.Services.AddService(typeof (TimerManager), timerManager);
 
@@ -55,7 +59,7 @@ namespace SGameEngine
             if (SoundPlayer == null)
                 SoundPlayer = new SoundPlayer();
             game.Services.AddService(typeof (ISoundPlayer), SoundPlayer);
-            
+
             Logger.Write(LogType.Info, "Engine initialized.");
         }
     }

@@ -9,7 +9,7 @@ namespace SGameEngine.Graphics
         /// <summary>
         ///     List of animation frames (coords in texture).
         /// </summary>
-        private readonly List<AnimationFrame> frames = new List<AnimationFrame>();
+        internal List<AnimationFrame> Frames { get; set; }
 
         /// <summary>
         ///     Duration of current frame.
@@ -21,12 +21,17 @@ namespace SGameEngine.Graphics
         /// </summary>
         private int currentFrameIndex;
 
+        public Animation()
+        {
+            
+        }
+
         public Animation(Texture2D texture2D, string name, List<AnimationFrame> frames, bool loop = false)
         {
             Texture2D = texture2D;
             Name = name;
             Loop = loop;
-            this.frames = frames;
+            this.Frames = frames;
         }
 
         /// <summary>
@@ -49,14 +54,14 @@ namespace SGameEngine.Graphics
         /// </summary>
         public AnimationFrame CurrentFrame
         {
-            get { return frames[currentFrameIndex]; }
+            get { return Frames[currentFrameIndex]; }
         }
 
         public void Update(GameTime gameTime)
         {
-            if (currentFrameDuration >= frames[currentFrameIndex].FrameDuration)
+            if (currentFrameDuration >= Frames[currentFrameIndex].FrameDuration)
             {
-                if (currentFrameIndex < frames.Count - 1)
+                if (currentFrameIndex < Frames.Count - 1)
                     currentFrameIndex++;
                 else
                 {
